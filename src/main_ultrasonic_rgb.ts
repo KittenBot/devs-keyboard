@@ -18,18 +18,16 @@ pixels.setAt(0, 0xff0000)
 
 let color = 0xff0000
 await led.showAll(color)
-let distance = 0
-ultrasonic.reading.subscribe(async (d) => {
-    distance = Math.map(d * 100, 0, 100, 0, 255)
-    if (distance > 255)
-        distance = 255
-})
 
 setInterval(async () => {
+    let distance = await ultrasonic.reading.read()
+    distance = Math.map(distance * 100, 0, 100, 0, 255)
+    if (distance > 255)
+        distance = 255
     // map 0 ~ 255 cm to blue ~ red
     let red = Math.floor(distance) & 0xff
     let blue = 255 - red
     color = (red << 16) | (blue)
     // console.log("color", red, blue, color)
     await led.showAll(color)
-}, 100)
+}, 30)
