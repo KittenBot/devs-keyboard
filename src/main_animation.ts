@@ -1,4 +1,4 @@
-import { LedStripLightType, LedVariant, gpio, sleep } from "@devicescript/core"
+import { LedStripLightType, LedVariant, gpio, Button, sleep } from "@devicescript/core"
 import { startLed } from "@devicescript/drivers"
 import { fillFade } from "@devicescript/runtime"
 
@@ -14,11 +14,13 @@ const led = await startLed({
 await led.showAll(0)
 await sleep(1000)
 const pixels = await led.buffer()
+const btn = new Button()
 
 pixels.setAt(0, 0xff0000)
 fillFade(pixels, 0.2)
 await led.show()
 let curr = 0
+let currAnimation = 0
 
 const pattern_snake = (len: number, t: number) => {
     for (let i=0;i<len;++i) {
@@ -65,13 +67,27 @@ const pattern_greys = (len: number, t: number) => {
     }
 }
 
+btn.down.subscribe(async () => {
+    currAnimation = (currAnimation + 1) % 4
+})
+
 let loop = 0;
 while(1){
     // change the pattern here
-    pattern_snake(64, loop++)
-    // pattern_sparkle(64, loop++)
-    // pattern_random(64, loop++)
-    // pattern_greys(64, loop++)
+    switch(currAnimation){
+        case 0:
+            pattern_snake(64, loop++)
+            break
+        case 1:
+            pattern_sparkle(64, loop++)
+            break
+        case 2:
+            pattern_random(64, loop++)
+            break
+        case 3:
+            pattern_greys(64, loop++)
+            break
+    }
 
     await led.show()
     await sleep(10)
