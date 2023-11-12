@@ -3,6 +3,9 @@
 import * as ds from "@devicescript/core"
 import { startLed } from "@devicescript/drivers"
 
+// 使用超声波模块读取距离，之后将距离映射到颜色并在键盘上显示
+// use ultrasonic module to read distance, then map distance to color and show on keyboard
+
 const ultrasonic = new ds.Distance()
 
 const led = await startLed({

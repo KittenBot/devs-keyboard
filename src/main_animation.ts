@@ -5,6 +5,8 @@ import { fillFade } from "@devicescript/runtime"
 // This is a simple animation that runs on the LED strip.
 // Please select one of the patterns below and uncomment it.
 
+// 这个例子使用一个按键模块来切换动画效果
+
 const led = await startLed({
     length: 13*5,
     columns: 5,
