@@ -31,22 +31,26 @@ Monitor to measure.
 
 CPU usage in percent.
 
+    ro cpu_temp: u8 @ 0x191
+
+CPU temperature in Celsius.
+
     ro ram_usage: u8 @ 0x192
 
 RAM usage in percent.
 
-    ro gpu_usage: u8 @ 0x193
+    ro gpu_info @ 0x193 {
+        usage: u8
+        temp: u8
+    }
 
-GPU usage in percent.
+GPU info.
 
-    ro network_tx: u32 @ 0x194
+    ro net_info @ 0x195 {
+        tx: u16
+        rx: u16
+    }
 
-Network transmit speed in Kbytes per second.
-
-    ro network_rx: u32 @ 0x198
-
-Network receive speed in Kbytes per second.
-
-    
+Network transmit/receive speed in Kbytes per second.
 
 A measure of PC monitor.
