@@ -7,26 +7,6 @@ Measures PC monitor.
 
 ## Registers
 
-    ro pixel: bytes / @ 0x180
-
-Pixel data. Return in led palette format.
-
-    rw pixel_format: u8 @ 0x81
-
-Pixel format.
-
-    rw width: u16 @ 0x82
-
-Width of the monitor in pixels.
-
-    rw height: u16 @ 0x83
-
-Height of the monitor in pixels.
-
-    rw monitor: u16 @ 0x85
-
-Monitor to measure.
-
     ro cpu_usage: u8 @ 0x190
 
 CPU usage in percent.
