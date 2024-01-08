@@ -5,6 +5,7 @@ import { fillPalette } from "@devicescript/runtime";
 const ultrasonic = new Distance()
 const led = new Led()
 const pixels = await led.buffer()
+let isFlashing = false
 
 const flash = async()=>{
   fillPalette(pixels, new Palette(hex`ff0000`))
@@ -15,8 +16,9 @@ const flash = async()=>{
 }
 
 setInterval(async()=>{
+  if(isFlashing) return
   let distance = await ultrasonic.reading.read()
-  if(distance<0.70){
+  if(distance<0.75){
     await flash()
   }
-},500)
+},800)
