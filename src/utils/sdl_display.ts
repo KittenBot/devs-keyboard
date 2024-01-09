@@ -8,10 +8,14 @@ type DsSpi = typeof ds & {
 
 export class SDLDisplay implements Display {
     palette: Palette
-    constructor(public image: Image) {
+    constructor(public image: Image, palette?: Palette) {
         assert(image.bpp === 4, "SDLDisplay only supports 4bpp images")
         this.image = image
-        this.palette = Palette.arcade()
+        if (palette) {
+            this.palette = palette
+        } else {
+            this.palette = Palette.arcade()
+        }
     }
     
     async init() {
