@@ -6,7 +6,7 @@
 Send various events to PC, including opening a URL, start an app, sending text, etc.
 
 ## Commands
-    
+
     command open_url @ 0x80 {
         url: string
     }
@@ -30,3 +30,13 @@ Send text to the active window.
     }
 
 Run a script.
+
+    command move_mouse @ 0x84 {
+       position: string
+    }
+
+Move mouse with accelerometer.
+
+    command click_mouse @ 0x85 {}
+
+Make the mouse click.

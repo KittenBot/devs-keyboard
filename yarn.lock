@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@devicescript/cli@^2.15.23":
-  version "2.15.23"
-  resolved "https://registry.yarnpkg.com/@devicescript/cli/-/cli-2.15.23.tgz#b52296d226744a30e64b591a9889591fbb54f71b"
-  integrity sha512-/lByTijs8CjIclXvum3pDrKJem8mQFopJqoCBRhPTNEGUv1sy81BL8GJdGhvQB0VUWXFeFNHUwiIEM11W/hq8w==
+"@devicescript/cli@2.15.20":
+  version "2.15.20"
+  resolved "https://registry.yarnpkg.com/@devicescript/cli/-/cli-2.15.20.tgz#055c17acdf97b6151741016462e6be2f563bebbd"
+  integrity sha512-cB5cPYnxt8qiML2Nn/ObwF6YOyEoY2AIu7Eyv8UWjv45ahGOpsuH4xsb+g/9NNasHkNgxeb3YfnQDF4jzAj3Pg==
   dependencies:
     update-notifier "^6.0.2"
   optionalDependencies:
@@ -468,9 +468,9 @@ node-addon-api@^5.0.0:
   integrity sha512-eh0GgfEkpnoWDq+VY8OyvYhFEzBk6jIYbRKdIlyTiAXIVJ8PyBaKb0rp7oDtoddbdoHWhq8wwr+XZ81F1rpNdA==
 
 node-gyp-build@^4.3.0:
-  version "4.7.1"
-  resolved "https://registry.yarnpkg.com/node-gyp-build/-/node-gyp-build-4.7.1.tgz#cd7d2eb48e594874053150a9418ac85af83ca8f7"
-  integrity sha512-wTSrZ+8lsRRa3I3H8Xr65dLWSgCvY2l4AOnaeKdPA9TB/WYMPaTcrzf3rXvFoVvjKNVnu0CcWSx54qq9GKRUYg==
+  version "4.8.0"
+  resolved "https://registry.yarnpkg.com/node-gyp-build/-/node-gyp-build-4.8.0.tgz#3fee9c1731df4581a3f9ead74664369ff00d26dd"
+  integrity sha512-u6fs2AEUljNho3EYTJNBfImO5QTo/J/1Etd+NVdCj7qWKUSN/bSLkZwhDv7I+w/MSC6qJ4cknepkAYykDdK8og==
 
 normalize-url@^8.0.0:
   version "8.0.0"
