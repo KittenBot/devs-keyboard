@@ -37,6 +37,8 @@ Run a script.
 
 Move mouse with accelerometer.
 
-    command click_mouse @ 0x85 {}
+    command click_mouse @ 0x85 {
+       click: string
+    }
 
 Make the mouse click.

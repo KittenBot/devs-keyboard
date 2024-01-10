@@ -3,30 +3,21 @@ import { Accelerometer, PCEvent,Button } from "@devicescript/core";
 const accelerometer = new Accelerometer()
 const pc = new PCEvent()
 const btn = new Button()
-let interval: number = null
-const goLeft = ()=>{
-  interval&&clearInterval(interval)
-  interval = setInterval(async()=>{
-    await pc.moveMouse( 'left' )
-  },50)
-}
-const goRight = ()=>{
-  interval&&clearInterval(interval)
-  interval = setInterval(async()=>{
-    await pc.moveMouse( 'right' )
-  },50)
-}
 
-accelerometer.tiltLeft.subscribe(() => {
-  goLeft()
+let isMoving = false
+accelerometer.reading.subscribe(async (value) => {
+  const x = value[0]
+  const y = value[1]
+  if(!isMoving){
+    isMoving = true
+    await pc.moveMouse(`${x},${y}`)
+    isMoving = false
+  }
 })
-accelerometer.tiltRight.subscribe(() => {
-  goRight()
-})
-accelerometer.faceUp.subscribe(() => {
-  interval&&clearInterval(interval)
-})
-
+//按钮按下松开，模拟鼠标按下松开
 btn.down.subscribe(async()=>{
-  await pc.clickMouse()
+  await pc.clickMouse('down')
+})
+btn.up.subscribe(async()=>{
+  await pc.clickMouse('up')
 })
