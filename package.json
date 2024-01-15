@@ -3,7 +3,7 @@
     "private": "Please use 'yarn devs add npm' to make this a publishable package",
     "dependencies": {},
     "devDependencies": {
-        "@devicescript/cli": "latest"
+        "@devicescript/cli": "2.15.20"
     },
     "scripts": {
         "setup": "devicescript build --quiet",
