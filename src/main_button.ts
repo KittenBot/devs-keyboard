@@ -31,10 +31,10 @@ btn.down.subscribe(async () => {
         const c = char2hid(txt.charCodeAt(i))
         // console.log("sending", txt[i], c)
         if (c > 0){
-            await keyboard.key(c, 0, ACT.Down)
+            await keyboard.key(c, 0, ACT.Press)
             await ds.sleep(50)
-            await keyboard.key(c, 0, ACT.Up)
-            await ds.sleep(50)
+            // await keyboard.key(c, 0, ACT.Up)
+            // await ds.sleep(10)
         }
     }
 })

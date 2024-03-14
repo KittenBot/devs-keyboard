@@ -9,7 +9,10 @@ const btn1 = new Button()
 const btn2 = new Button()
 
 const keyboard = startHidKeyboard( {} )
-let modifier = HidKeyboardModifiers.LeftGUI
+
+//Select based on the type of your system.
+let modifier = HidKeyboardModifiers.LeftControl//win
+//let modifier = HidKeyboardModifiers.LeftGUI//MAC
 
 //copy
 btn1.down.subscribe( async () => {
