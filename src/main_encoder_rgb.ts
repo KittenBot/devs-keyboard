@@ -6,6 +6,7 @@ import { Palette } from "@devicescript/graphics"
 // 使用旋转编码器旋转rgb led
 
 const encoder = new ds.RotaryEncoder()
+const encoder2 = new ds.RotaryEncoder()
 const led = new ds.Led()
 const btn = new ds.Button()
 
@@ -15,6 +16,7 @@ pixels.setAt(0, 0xff0000)
 await led.show()
 
 let pos = await encoder.reading.read()
+let pos2 = await encoder2.reading.read()
 
 encoder.reading.subscribe(async (v) => {
     if (v !== pos) {
@@ -24,6 +26,18 @@ encoder.reading.subscribe(async (v) => {
             await pixels.rotate(-1)
         }
         pos = v
+        await led.show()
+    }
+})
+
+encoder2.reading.subscribe(async (v) => {
+    if (v !== pos2) {
+        if (v > pos2){
+            await pixels.rotate(-1)
+        } else {
+            await pixels.rotate(1)
+        }
+        pos2 = v
         await led.show()
     }
 })

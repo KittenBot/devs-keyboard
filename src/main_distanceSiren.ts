@@ -21,4 +21,4 @@ setInterval(async()=>{
   if(distance<0.75){
     await flash()
   }
-},100)
+},50)

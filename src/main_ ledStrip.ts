@@ -9,4 +9,4 @@ setInterval(async()=>{
   if(shift===(numPixels-1)) shift = -1
   shift ++
   await ledStrip.runEncoded("rotfwd", shift)
-},300)
+},50)

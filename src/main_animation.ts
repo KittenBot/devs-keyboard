@@ -14,7 +14,7 @@ const led = await startLed({
     hwConfig: { type: LedStripLightType.WS2812B_GRB, pin: gpio(7) },
 })
 await led.showAll(0)
-await sleep(1000)
+await sleep(1000) 
 const pixels = await led.buffer()
 const btn = new Button()
 

@@ -8,6 +8,6 @@ cd.onJson.subscribe((data) => {
 })
 
 setInterval(async () => {
-    await cd.uploadJson("jacdac", JSON.stringify({ "hello": "world"}))
-}, 3000)
+    //await cd.uploadJson(JSON.stringify({"topic": "1111", "data": "ledon"}),'')
+}, 5000)
 
